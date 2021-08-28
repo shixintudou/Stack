@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Heap.cs" />
     <Compile Include="Close.cs" />
     <Compile Include="Fiord_Warshall.cs" />
     <Compile Include="Solution.cs" />
