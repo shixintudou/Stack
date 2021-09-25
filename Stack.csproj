@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Batch.cs" />
+    <Compile Include="Bricks.cs" />
+    <Compile Include="ProductsSearch.cs" />
+    <Compile Include="MaxAreaWater.cs" />
+    <Compile Include="LongestNum .cs" />
+    <Compile Include="ForthNode.cs" />
     <Compile Include="TreeSum.cs" />
     <Compile Include="Heap.cs" />
     <Compile Include="Close.cs" />

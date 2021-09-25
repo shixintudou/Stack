@@ -6,8 +6,49 @@ using System.Threading.Tasks;
 
 namespace Stack
 {
-    class Solution
+    class Batch
     {
+        public int MaxHappyGroups(int batchSize, int[] groups)
+        {
+            IList<IList<int>> vs = new List<IList<int>>();
+            vs = Permute(groups);
+            int sum = 0;
+            Random random = new Random();
+            if(vs.Count<10000)
+            {
+                foreach (List<int> vs1 in vs)
+                {
+                    int temp = 0;
+                    int freq = 0;
+                    foreach (int i in vs1)
+                    {
+                        if (freq % batchSize == 0)
+                            temp++;
+                        freq += i;
+                    }
+                    if (sum < temp)
+                        sum = temp;
+                }
+            }
+            else
+            {
+                for(int j=0;j<10000;j++)
+                {
+                    int temp = 0;
+                    int freq = 0;
+                    foreach (int i in vs[random.Next(0, vs.Count)])
+                    {
+                        if (freq % batchSize == 0)
+                            temp++;
+                        freq += i;
+                    }
+                    if (sum < temp)
+                        sum = temp;
+                }
+                
+            }
+            return sum;
+        }
         public IList<IList<int>> Permute(int[] nums)
         {
             IList<IList<int>> tp = new List<IList<int>>();
